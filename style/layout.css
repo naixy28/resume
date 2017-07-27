@@ -1,0 +1,50 @@
+/* NOTE
+ *  Layout and basic stuff
+ */
+
+body {
+  /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #404040;
+    overflow-x: hidden;
+    --color-1: #5A7D7C;
+    --color-2: #D8D5DB;
+    --color-3: #2D2D34;
+    --color-4: #37505C;
+    --color-5: #113537;
+    --color-6: #F4F3F5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    line-height: 1.7;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+/* Grid layout */
+.gird-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, minmax( auto , 20vw)) 1fr;
+    grid-gap: 3em;
+    box-sizing: border-box;
+    border: 3px solid var(--color-5);
+}
+
+#home {
+    height: 100vh;
+    background: var(--color-1);
+}
