@@ -9,6 +9,8 @@
     <!--styles-->
     <link href="style/normalize.css" rel="stylesheet">
     <link href="style/layout.css" rel="stylesheet">
+    <link href='https://fonts.font.im/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.font.im/css?family=Kreon:300' rel='stylesheet' type='text/css'>
 
     <!--fonts google-->
     <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
@@ -17,36 +19,62 @@
 </head>
 <body>
     <div class="site">
-        <section class="gird-row" id="header"></section>
+        <section class="gird-row" id="header">
+            <div class="hello-gp">
+                <h1>Welcome</h1>
+                <h4>This is Ryan</h4>
+            </div>
+        </section>
         <section class="gird-row" id="basic-msg">
-            <div class="bg-self"></div>
-            <div class="self-contact">
-                <dl>
-                    <dt>Name</dt>
-                    <dd>Yuan Yang</dd>
-                    <dt>Phone</dt>
-                    <dd>+86 138****2722</dd>
-                    <dt>Email</dt>
-                    <dd>ryan_yuan1022@163.com</dd>
-                    <dt>Location</dt>
-                    <dd>Shanghai, China</dd>
-                    <dt>Github</dt>
-                    <dd>naixy28</dd>
-                </dl>
+            <div class="bg-self" draggable="true"></div>
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <dl class="self-contact">
+                        <dt>Name</dt>
+                        <dd>Ryan Yuan</dd>
+                        <dt>Phone</dt>
+                        <dd>+86 138****2722</dd>
+                        <dt>Email</dt>
+                        <dd>ryan_yuan1022@163.com</dd>
+                        <dt>Location</dt>
+                        <dd>Shanghai, China</dd>
+                        <dt>Github</dt>
+                        <dd>naixy28</dd>
+                    </dl>
+                </div>
+                <div class="carousel-item">
+                    <p>鸣神の　少しとよみて　さし昙り　雨も降らんか　君を留めん</p>
+                    <p>鸣神の　少しとよみて　降らずとも　我は止まらん　妹し留めば</p>
+                </div>
             </div>
         </section>
         <section class="gird-row center" id="works">
             <div class="center-wrappper works-content flex-res-wrapper">
                 <div class="works-description flex-item-1-3">
-                    Laboris adipisicing ullamco ipsum amet.
+                    <h2>Works</h2>
+                    <p>鸣神の　少しとよみて　さし昙り　雨も降らんか　君を留めん</p>
+                    <p>鸣神の　少しとよみて　降らずとも　我は止まらん　妹し留めば</p>
+                    <p>Tempor ut qui laborum in anim. Laborum deserunt esse velit est et. Velit pariatur quis laboris ullamco Lorem dolore laboris ex quis. Ex Lorem incididunt esse tempor proident sint excepteur eu consectetur occaecat exercitation aute.</p>
                 </div>
                 <div class="works-gp flex-item-2-3">
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
-                    <div class="work-img"><img src="./img/bg-self.jpg" alt=""></div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
+                    <div class="work-img"><img src="./img/bg-self.jpg" alt="">
+                        <div class="shadow"><span>RESUME</span></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -75,5 +103,7 @@
         <section class="gird-row" id="cards"></section>
         <section class="gird-row" id="footer"></section>
     </div>
+
+    <script src="./scripts/resume-main.js"></script>
 </body>
 </html>
