@@ -41,7 +41,7 @@ h6 {
     --responsive-lg: 974px;
     --responsive-md: 768px;
     --responsive-sm: 480px;
-    --center-wrapper-margin-x: 1em;
+    --center-wrapper-margin-x: 3.5em;
     --column-gap-padding-x: 5em;
     --grid-row-center-padding-y: 5em;
 }
@@ -100,6 +100,8 @@ h6 {
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    /* BFC */
+    overflow: hidden; 
 }
 
 .hello-gp {
@@ -107,14 +109,19 @@ h6 {
     opacity: .7;
     outline: 4px double var(--color-6);
     outline-offset: 8px;
-    min-height: 20em;
+    /* min-height: 20em; */
     min-width: 20em;
-    justify-self: center;
-    align-self: center;
+    max-width: calc(var(--responsive-sm) - 2 * var(--center-wrapper-margin-x));
+    /* justify-self: center; */
+    /* align-self: center; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+    /* before support grid */
+    height: 20em;
+    margin: calc(50vh - 10em) auto ; 
 }
 
 .hello-gp h1,
@@ -124,15 +131,16 @@ h6 {
 
 #basic-msg {
     grid-template-columns: repeat(auto-fit, minmax( calc(var(--responsive-md) / 2) , 1fr));
-    /* background-color: var(--color-6); */
+     background-color: var(--color-6); 
 }
 .bg-self {
-    background: url(../img/bg-self.jpg);
+    background: url(../img/bg-main.jpg);
     background-size: cover;
     background-position: 50% 50%;
     mix-blend-mode: multiply;
     width: 100%;    
     min-height: 600px;
+    -webkit-filter: grayscale(100%) brightness(120%);
 }
 
 .self-contact {
@@ -167,7 +175,7 @@ h6 {
 }
 
 #works {
-    background: var(--color-6);
+    /* background: var(--color-6); */
 }
 
 .works-content {
@@ -237,6 +245,7 @@ h6 {
     background-clip: content-box;
     opacity: 0;
     transition: inherit;
+    pointer-events: none;
 }
 
 .work-img:hover {
@@ -248,6 +257,10 @@ h6 {
 }
 .work-img:hover .shadow{
     opacity: 1;
+}
+
+#employment {
+    background: var(--color-6);
 }
 
 .emp-gp{
@@ -269,7 +282,14 @@ h6 {
 
 .emp-wrapper:hover {
     transform: translate3d( -1em, -1em, 0 );
-    box-shadow: 2em 2em var(--color-2);
+    box-shadow: 2em 2em var(--color-4);
+}
+
+.emp-wrapper::before,
+.emp-wrapper::after,
+.emp-card::before,
+.emp-card::after {
+    background: var(--color-4);
 }
 
 .emp-card {
@@ -314,7 +334,7 @@ h6 {
     top: -4px;
     height: 4px;
     width: 0;
-    background: var(--color-2);
+    /* background: var(--color-2); */
     transition: width .2s linear .2s;
 }
 .emp-wrapper::after{
@@ -324,7 +344,7 @@ h6 {
     bottom: -4px;
     height: 4px;
     width: 0;
-    background: var(--color-2);
+    /* background: var(--color-2); */
     transition: width .2s linear .2s;
 }
 
@@ -341,7 +361,7 @@ h6 {
     bottom: -4px;
     height: 0;
     width: 4px;
-    background: var(--color-2);
+    /* background: var(--color-2); */
     transition: height .2s linear;
 }
 .emp-card::after{
@@ -351,7 +371,7 @@ h6 {
     top: -4px;
     height: 0;
     width: 4px;
-    background: var(--color-2);
+    /* background: var(--color-2); */
     transition: height .2s linear;
 }
 .emp-wrapper:hover  .emp-card::before,
@@ -365,17 +385,25 @@ h6 {
     .emp-gp {
         flex: 1 1 100%;
     }
+
+    .emp-description p, 
+    .works-description p {
+        padding-right: 0;
+    }
 }
 
 @media ( max-width: 790px) {
     .works-gp {
         /* background: seagreen; */
     }
+
+    .emp-gp {
+        grid-template-columns: repeat(auto-fit, minmax( 100%, auto));
+    }
 }
 
 @media ( max-width: 502px) {
-    .works-gp,
-    .emp-gp {
+    .works-gp {
         grid-template-columns: repeat(auto-fit, minmax( 100%, auto));
     }
 }
