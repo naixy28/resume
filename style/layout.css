@@ -100,10 +100,11 @@ h6 {
 /****************************** Section detailed styles ******************************/
 #header {
     height: 100vh;
-    background: url(../img/bg-header.jpg);
+    background: #5A7D7C url(../img/bg-header.jpg);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    background-blend-mode: exclusion;
     /* BFC */
     overflow: hidden; 
 }
@@ -470,6 +471,54 @@ h6 {
     color: var(--color-2);
     font-size: 1.2em;
     
+}
+
+#footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: var(--grid-row-center-padding-y) 0;
+}
+
+.footer-gp {
+    flex: 0 1 var(--responsive-sm);
+    text-align: center;
+}
+.footer-gp ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.footer-gp ul li{ 
+    padding: 0 .5em;
+}
+
+.footer-gp ul li a{ 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background: var(--color-3);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-gp ul li a:hover {
+    /* color: var(--color-5); */
+    background: var(--color-1);
+}
+
+.footer-gp ul li a i{
+    line-height: 50px;
+    font-size: 25px;
+    font-style: normal;
+}
+
+.i-zhi::before {
+    content: '知';
 }
 
 /* plus 22px scroll bar width */
