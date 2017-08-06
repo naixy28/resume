@@ -90,15 +90,15 @@
                 screenH = window.innerHeight || 1,
                 imgOriginW = currImg.width || 0,
                 imgOriginH = currImg.height || 0,
-                paddingTop = (imgOriginH + 2 * yMinPadding) >= screenH ? yMinPadding : (screenH - imgOriginH) / 2,
-                scale = 1,
+                // scale = 1,
+                scale = (screenW - imgOriginW - xMinPadding * 2) >= 0 ? 1 : (screenW - xMinPadding * 2) / imgOriginW,
+                paddingTop = (imgOriginH * scale + 2 * yMinPadding) >= screenH ? yMinPadding : (screenH - imgOriginH * scale) / 2,
                 x,
                 y;
 
             // calculate position
             x = (screenW - imgOriginW) >= 0 ? (screenW - imgOriginW) / 2 : xMinPadding;
             y = paddingTop + scrollSpaceHeight;
-            scale = (screenW - imgOriginW - xMinPadding * 2) >= 0 ? 1 : (screenW - xMinPadding * 2) / imgOriginW;
 
             // emit transition
             let transFunc = () => { currImg.setAttribute('style', `transform: translate3d( ${x}px, ${y}px, 0 ) scale(${scale}); `); }

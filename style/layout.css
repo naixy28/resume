@@ -438,7 +438,7 @@ h6 {
 
 .skills-item circle.donut,
 .skills-item circle.donut-bg{
-    transition: all .4s ease-out .6s;
+    transition: all 1.2s ease-out .6s;
     r: 40%;
     cx: 50%;
     cy: 50%;
