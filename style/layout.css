@@ -46,6 +46,10 @@ h6 {
     --grid-row-center-padding-y: 5em;
 }
 
+::selection {
+    background: #ddd;
+}
+
 .gird-row {
     display: grid;
     box-sizing: border-box;
@@ -183,11 +187,13 @@ h6 {
     min-height: 600px;
 }
 
+.skills-description,
 .emp-description,
 .works-description {
     padding-bottom: var(--grid-row-center-padding-y);
 }
 
+.skills-description h2,
 .emp-description h2,
 .works-description h2 {
      font-family: 'Kreon'; 
@@ -195,6 +201,7 @@ h6 {
      position: relative;
 }
 
+.skills-description h2::after,
 .emp-description h2::after,
 .works-description h2::after {
     content: '';
@@ -206,6 +213,7 @@ h6 {
     background: var(--color-1);
 }
 
+.skills-description p,
 .emp-description p, 
 .works-description p {
     padding-right: var(--column-gap-padding-x);
@@ -343,6 +351,14 @@ h6 {
     font-size: .8em;
     line-height: 2;
     padding-left: 1em;
+    list-style: none;
+    position: relative;
+}
+
+.emp-card .job-desc li::before {
+    content: '-';
+    position: absolute;
+    left: 0;
 }
 
 .emp-wrapper::before{
@@ -397,13 +413,74 @@ h6 {
     height: calc(100% + 8px);
 }
 
+.skills-chart {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.skills-item {
+    flex: 1 0 33.3%;
+    height: 200px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-item svg {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.skills-item circle.donut,
+.skills-item circle.donut-bg{
+    transition: all .4s ease-out .6s;
+    r: 40%;
+    cx: 50%;
+    cy: 50%;
+    fill: transparent;
+    stroke-width: .5em;
+}
+.skills-item circle.donut{
+    stroke: var(--color-1);
+    stroke-dasharray: 1 300%;
+}
+.skills-item circle.donut-bg{
+    stroke: var(--color-6);
+    stroke-dasharray: 300% 300%;
+}
+
+.skills-item .i-text{
+    display: inline-block;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+    z-index: 10;
+}
+
+.i-text b{
+    color: var(--color-2);
+    font-size: 1.2em;
+    
+}
+
 /* plus 22px scroll bar width */
 @media ( max-width: 992px) {
+    .skills-chart,
     .works-gp,
     .emp-gp {
         flex: 1 1 100%;
     }
 
+    .skills-description p,
     .emp-description p, 
     .works-description p {
         padding-right: 0;
@@ -418,10 +495,18 @@ h6 {
     .emp-gp {
         grid-template-columns: repeat(auto-fit, minmax( 100%, auto));
     }
+
+    .skills-item {
+        flex: 0 0 50%;
+    }
 }
 
 @media ( max-width: 502px) {
     .works-gp {
         grid-template-columns: repeat(auto-fit, minmax( 100%, auto));
+    }
+
+    .skills-item {
+        flex: 0 0 100%;
     }
 }
