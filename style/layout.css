@@ -160,7 +160,7 @@ h6 {
     line-height: 4;
 }
 .self-contact dt{
-    flex: 1 0 50%;
+    flex: 0 0 40%;
     padding-left: var(--column-gap-padding-x);
     box-sizing: border-box;
     position: relative;
@@ -168,14 +168,16 @@ h6 {
     font-weight: 700;
 }
 .self-contact dt::after{
-    content: '-';
+    content: ':';
     position: absolute;
-    right: 30%;
+    /* right: 30%; */
+    left: 10em;
 }
 .self-contact dd{
-    flex: 0 0 40%;
-    padding-left: 10%;
+    flex: 0 0 60%;
+    /* padding-left: 10%; */
     margin: 0;
+    box-sizing: border-box;    
     font-family: 'Roboto Condensed';
     font-weight: 400;
 }
