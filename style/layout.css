@@ -160,8 +160,8 @@ h6 {
     line-height: 4;
 }
 .self-contact dt{
-    flex: 0 0 50%;
-    padding-left: 35%;
+    flex: 1 0 50%;
+    padding-left: --column-gap-padding-x;
     box-sizing: border-box;
     position: relative;
     font-family: 'Roboto Condensed';
