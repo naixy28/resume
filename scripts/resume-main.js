@@ -46,6 +46,56 @@
         }
     })()
 
+    const TopBtn = (function(){
+        const btn = document.querySelector('.to-top'),
+            scroller = window,
+            scrollee = document.body,
+            hideClassName = 'hide',
+            duration = 300;
+
+        let prevState = false, // true -> show, false -> hide
+            height,
+            top;
+
+        scroller.addEventListener('scroll', scrollHandler);
+        btn.addEventListener('click', clickHandler);
+
+        function scrollHandler (e) {
+            top = scrollee.scrollTop || 500;
+            height = scroller.innerHeight || scroller.clientHeight;
+
+            let currState = top > height;
+
+            if ( currState === prevState ) return;
+            prevState = currState;
+
+            if ( !currState ) {
+                btn.classList.add( hideClassName );
+            } else {
+                btn.classList.remove( hideClassName );
+            }
+        }
+
+        function clickHandler (e) {
+            let prevTop = top,
+                step = prevTop / (duration / 16.6667); // linear
+
+            let timer = requestAnimationFrame(function f(){
+                scrollee.scrollTop -= step;
+                prevTop -= step;
+
+                if ( prevTop > 0) {
+                    timer = requestAnimationFrame(f)
+                } else {
+                    scrollee.scrollTop = 0;
+                }
+            });
+
+        }
+
+        return {}
+    })()
+
     // scroll listener
     const _onscroll = window.onscroll || function(){};
     window.onscroll = function(e) {

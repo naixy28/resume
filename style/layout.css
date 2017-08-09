@@ -482,6 +482,14 @@ h6 {
     padding: var(--grid-row-center-padding-y) 0;
 }
 
+.footer-desc a{
+    color: var(--color-1);
+    text-decoration: none;
+}
+.footer-desc a:hover{
+    text-decoration: underline;
+}
+
 .footer-gp {
     flex: 0 1 var(--responsive-sm);
     text-align: center;
@@ -521,6 +529,32 @@ h6 {
 
 .i-zhi::before {
     content: '知';
+}
+.i-jj::before {
+    content: '掘';
+}
+
+.to-top {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    -webkit-appearance: none;
+    border: 1px solid var(--color-2);
+    color: var(--color-4);
+    background: var(--color-6);
+    cursor: pointer;
+    outline: none;
+    transition: bottom .3s linear;
+}
+
+.to-top:hover {
+    background: var(--color-2);    
+}
+.to-top.hide {
+    bottom: -50px;
 }
 
 /* plus 22px scroll bar width */
